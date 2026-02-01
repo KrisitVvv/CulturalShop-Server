@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resources/mapper/OrderMapper.xml -->
+<mapper namespace="com.example.culturalshop_back.Mapper.OrderMapper">
+    <resultMap id="OrderResultMap" type="com.example.culturalshop_back.Domain.Order">
+        <id column="id" property="id" />
+        <result column="UID" property="UID" />
+        <result column="goods" property="goods" />
+        <result column="number" property="number" />
+        <result column="price" property="price" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+    <select id="getOrdersByUID" resultType="com.example.culturalshop_back.Domain.Order">
+        SELECT * FROM `order` WHERE UID = #{UID} ORDER BY create_time DESC
+    </select>
+</mapper>

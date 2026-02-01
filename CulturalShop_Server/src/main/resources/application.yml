@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    # 驱动名字
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # mybatis数据库名称
+    url: jdbc:mysql://localhost:3306/culturalshop?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: 1301422822v
+  web:
+    resources:
+      static-locations: file:D:/Data/Class/个人/作业/JavaWeb/课程设计/后端代码
+
+mybatis:
+  # domain  java类包路径
+  typeAliasesPackage: com.example.culturalshop_back.Domain
+  # mapper对应的xml文件，*是通配符，*.xml代表所有xml文件
+  mapperLocations: classpath:mapper/*.xml
